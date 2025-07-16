@@ -1,0 +1,1 @@
+/*Supplies random prompts whenever needed.*/
