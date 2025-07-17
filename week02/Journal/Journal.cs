@@ -1,8 +1,3 @@
-/*Stores a list of journal entries. SaveToFile and LoadFromFile
-Adding an entry
-Displaying all the entries
-Saving to a file
-Loading from a file*/
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
