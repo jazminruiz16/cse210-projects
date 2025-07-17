@@ -26,7 +26,7 @@ class Journal
                 Console.WriteLine($" {e1._promptText}");
                 Console.Write(" ");
                 e1._journal = Console.ReadLine();
-                e1._date = "15/01/2025";
+                e1._date = DateTime.Now.ToString("dd/MM/yyyy");
                 entries.Add(e1);
                 Console.WriteLine($" {entries}");
                 foreach (Entry e in entries)
