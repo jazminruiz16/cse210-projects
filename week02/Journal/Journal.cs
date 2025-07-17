@@ -5,12 +5,14 @@ Saving to a file
 Loading from a file*/
 using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
+using System.IO;
 class Journal
 {
+    static List<Entry> entries = new List<Entry>();
     static void Main(string[] args)
     {
-        List<string> numbers = new List<string>();
+
         string question = "0";
         while (question != "5")
         {
@@ -19,37 +21,88 @@ class Journal
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
+            Entry e1 = new Entry();
             Console.Write("What would you like to do? ");
-            string question = Console.ReadLine();
+            question = Console.ReadLine();
             if (question == "1")
             {
-                _prompt = PromptGenerator();
-                Console.WriteLine($" {_prompt}");
+                PromptGenerator generator = new PromptGenerator();
+                e1._promptText = generator.SelectPrompt();
+                Console.WriteLine($" {e1._promptText}");
                 Console.Write(" ");
-                string _journal1 = Console.ReadLine();
+                e1._journal = Console.ReadLine();
+                e1._date = "15/01/2025";
+                entries.Add(e1);
+                Console.WriteLine($" {entries}");
+                foreach (Entry e in entries)
+                {
+                    Console.WriteLine($"{entries}");
+                }
+
             }
             else if (question == "2")
             {
+                foreach (Entry e in entries)/*dentro esa lista aun tienen los nombres e._date*/
+                {
+                    e.Display();
+                }
 
             }
             else if (question == "3")
             {
-                letter = "C";
+                Console.Write("Enter the name of your file: ");
+                string fileName = Console.ReadLine();
+                LoadToFile(fileName);
             }
             else if (question == "4")
             {
-                letter = "D";
+                Console.Write("Enter the name of your file: ");
+                string fileName = Console.ReadLine();
+                SaveToFile(fileName);
+
             }
             else if (question == "5")
             {
-                letter = "F";
+                Console.WriteLine("Cogratulations! You accomplished today's goal of writing your journal.");
+
             }
             else
             {
-                Console.WriteLine("Please enter a number between 1 and 5 without adding symbols or letters.");
+                Console.WriteLine("Please enter a number between 1 to 5 without adding symbols or letters.");
             }
         }
 
     }
-    public static void SaveToFile(List<)
+
+    public static void SaveToFile(string fileName)
+    {
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            foreach (Entry e in entries)
+            {
+                outputFile.WriteLine($"{e._date} ~~ Prompt: {e._promptText} ~~ {e._journal}");
+            }
+        }
+    }
+    public static void LoadToFile(string fileName)
+    {
+        if (File.Exists(fileName))
+        {
+            entries.Clear();
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split("~~");
+                Entry e0 = new Entry();
+                e0._date = parts[0];
+                e0._promptText = parts[1];
+                e0._journal = parts[2];
+                entries.Add(e0);
+            }        
+        }
+        else
+        {
+            Console.WriteLine("File not found.");
+        }
+    }
 }

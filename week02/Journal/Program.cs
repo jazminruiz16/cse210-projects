@@ -1,4 +1,4 @@
-using System;
+/*using System;
 
 class Program
 {
@@ -6,4 +6,4 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Journal Project.");
     }
-}
+}*/
