@@ -5,11 +5,6 @@ public class Video
     public string _author;
     public string _time;
     public List<Comment> _comments;
-
-    /*public Video()
-    {
-        _comments = new List<Comment>();
-    }*/
     public int CountComments(List<Comment> comments)
     {
         int n = 0;
@@ -20,8 +15,5 @@ public class Video
         return n;
 
     }
-    
-
-
 }
 
