@@ -64,7 +64,8 @@ class Program
         foreach (var video in videos)
         {
             Console.WriteLine("Title: " + video._title);
-            Console.WriteLine("Author: " + video._author + "Duration: " + video._time);
+            Console.WriteLine("Author: " + video._author);
+            Console.WriteLine("Duration: " + video._time);
             Console.WriteLine("Total Comments: " + video.CountComments(video._comments));
             int n = 0;
             foreach (var comment in video._comments)
@@ -72,6 +73,7 @@ class Program
                 n++;
                 Console.WriteLine("Comment " + n + ".- " + comment._name + " : " + comment._comment);
             }
+            Console.WriteLine(" ");
 
         }
     }
