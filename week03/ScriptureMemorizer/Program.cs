@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
-
+/*Showing Creativity and Exceeding Requirements: To make it more fun, I made the program offer 
+three difficulty levels: Easy = 1, Medium = 2, and Hard = 3. 
+The more difficult the program, the more words are hidden per turn. 
+This adjusts even if you change the writing to a longer one.*/
 class Program
 {
 
@@ -13,7 +16,7 @@ class Program
 
         int n = reference1.GetDisplayText().Split(" ").Length;
         int m = 1;
-        
+
         scripture1.SetNewText(reference1.GetDisplayText());
         string newText = scripture1.GetNewText();
         Console.Write("Determine the degree of difficulty by entering a number from 1 to 3 : ");
