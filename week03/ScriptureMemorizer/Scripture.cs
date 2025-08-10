@@ -32,7 +32,7 @@ public class Scripture
     }
     public string HideWords()
     {
-        
+
         string[] words = _newText.Split(" ");
         if (_wordsToHide != words.Length)
         {
@@ -55,7 +55,7 @@ public class Scripture
         }
         else
         {
-            for (int i = 0; i < _wordsToHide; i++)
+            for (int i = 0; i == _wordsToHide; i++)
             {
                 string hiddenWord = words[i];
                 Word word2 = new Word();
@@ -78,7 +78,17 @@ public class Scripture
         string newUnitedText = "";
         foreach (var word in words)
         {
-            newUnitedText = _newText + word;
+            int finalWord = 0;
+            if (words.Length == finalWord)
+            {
+                newUnitedText = newUnitedText + word;
+            }
+            else
+            {
+                newUnitedText = newUnitedText + word + " ";
+            }
+            finalWord++;
+                
         }
         return newUnitedText;
     }

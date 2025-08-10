@@ -20,11 +20,11 @@ public class Reference
 
         if (_endVerse == 0)
         {
-            verseReference = _book + " " + _chapter + " : " + _startVerse;
+            verseReference = _book + " " + _chapter + ":" + _startVerse;
         }
         else
         {
-            verseReference = _book + " " + _chapter + " : " + _startVerse + " - " + _endVerse;
+            verseReference = _book + " " + _chapter + ": " + _startVerse + "-" + _endVerse;
         }
         
         return verseReference;

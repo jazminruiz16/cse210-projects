@@ -13,37 +13,38 @@ class Program
 
         int n = reference1.GetDisplayText().Split(" ").Length;
         int m = 1;
-        Console.Write("Press enter to continue or type 'quit' to finish: ");
-        string question = Console.ReadLine();
+        /*Console.Write("Press enter to continue or type 'quit' to finish: ");*/
+        string question = "";
         scripture1.SetNewText(reference1.GetDisplayText());
         string newText = scripture1.GetNewText();
-        while (question != "quit")
+        Console.Write("Determine the degree of difficulty by entering a number from 1 to 3 : ");
+        string difficultyString = Console.ReadLine();
+        double fractionNumber = 0.3;
+        int lastRound = 2;
+        int difficulty = Convert.ToInt32(difficultyString);
+        if (difficulty == 1)
         {
-            Console.Write("Determine the degree of difficulty by entering a number from 1 to 3 : ");
-            string difficultyString = Console.ReadLine();
-            double fractionNumber = 0.3;
-            int lastRound = 2;
-            int difficulty = Convert.ToInt32(difficultyString);
-            if (difficulty == 1)
-            {
-                fractionNumber = 0.1;
-                lastRound = 9;
-            }
-            else if (difficulty == 2)
-            {
-                fractionNumber = 0.2;
-                lastRound = 4;
-            }
-            else if (difficulty == 3)
-            {
-                fractionNumber = 0.3;
-                lastRound = 2;
-            }
-            else
-            {
-                Console.WriteLine("You entered an incorrect answer, please enter a number between 1 to 3.");
-                break;
-            }
+            fractionNumber = 0.1;
+            lastRound = 9;
+        }
+        else if (difficulty == 2)
+        {
+            fractionNumber = 0.2;
+            lastRound = 4;
+        }
+        else if (difficulty == 3)
+        {
+            fractionNumber = 0.3;
+            lastRound = 3;
+        }
+        else
+        {
+            Console.WriteLine("You entered an incorrect answer, a low difficulty will be assumed.");
+        }
+        Console.WriteLine(reference1.GetVerseReference() + ": " + newText);
+        while (question != "quit" && m <= lastRound + 2)
+        {
+
             string newUnitedText = "";
             if (question == "" && m <= lastRound)
             {
@@ -52,6 +53,8 @@ class Program
                 scripture1.SetNewText(newText);
                 newUnitedText = scripture1.HideWords();
                 m++;
+                Console.Write("Press enter to continue or type 'quit' to finish: ");
+                question = Console.ReadLine();
 
             }
             else if (question == "" && m == lastRound + 1)
@@ -60,6 +63,8 @@ class Program
                 scripture1.SetNewText(newText);
                 newUnitedText = scripture1.HideWords();
                 m++;
+                Console.Write("Press enter to continue or type 'quit' to finish: ");
+                question = Console.ReadLine();
 
             }
             else if (question == "" && m == lastRound + 2)
@@ -72,10 +77,12 @@ class Program
                 Console.WriteLine("You entered an incorrect answer, please press enter to continue or type 'quit' to finish: ");
             }
             newText = newUnitedText;
-            Console.WriteLine(reference1.GetVerseReference() + ": " + newText);
+            Console.Clear();
+            Console.WriteLine(reference1.GetVerseReference() + " : " + newText);
 
 
         }
+        Console.WriteLine("Have a nice day!!");
 
     }
 

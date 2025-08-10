@@ -15,7 +15,7 @@ public class Word
     {
         bool hidden = false;
         int index = _word.IndexOf("_");
-        if (index < 0)
+        if (index >= 0)
         {
             hidden = true;
         }
