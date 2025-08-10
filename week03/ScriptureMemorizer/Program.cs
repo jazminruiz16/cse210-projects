@@ -13,8 +13,7 @@ class Program
 
         int n = reference1.GetDisplayText().Split(" ").Length;
         int m = 1;
-        /*Console.Write("Press enter to continue or type 'quit' to finish: ");*/
-        string question = "";
+        
         scripture1.SetNewText(reference1.GetDisplayText());
         string newText = scripture1.GetNewText();
         Console.Write("Determine the degree of difficulty by entering a number from 1 to 3 : ");
@@ -42,6 +41,8 @@ class Program
             Console.WriteLine("You entered an incorrect answer, a low difficulty will be assumed.");
         }
         Console.WriteLine(reference1.GetVerseReference() + ": " + newText);
+        Console.Write("Press enter to continue or type 'quit' to finish: ");
+        string question = Console.ReadLine();
         while (question != "quit" && m <= lastRound + 2)
         {
 
@@ -49,12 +50,10 @@ class Program
             if (question == "" && m <= lastRound)
             {
                 double wordsToHideDecimals = n * fractionNumber;
-                scripture1.SetWordsToHide(Convert.ToInt32(Math.Round(wordsToHideDecimals)));
+                scripture1.SetWordsToHide(Convert.ToInt32(Math.Floor(wordsToHideDecimals)));
                 scripture1.SetNewText(newText);
                 newUnitedText = scripture1.HideWords();
                 m++;
-                Console.Write("Press enter to continue or type 'quit' to finish: ");
-                question = Console.ReadLine();
 
             }
             else if (question == "" && m == lastRound + 1)
@@ -63,9 +62,6 @@ class Program
                 scripture1.SetNewText(newText);
                 newUnitedText = scripture1.HideWords();
                 m++;
-                Console.Write("Press enter to continue or type 'quit' to finish: ");
-                question = Console.ReadLine();
-
             }
             else if (question == "" && m == lastRound + 2)
             {
@@ -79,6 +75,9 @@ class Program
             newText = newUnitedText;
             Console.Clear();
             Console.WriteLine(reference1.GetVerseReference() + " : " + newText);
+            Console.Write("Press enter to continue or type 'quit' to finish: ");
+            question = Console.ReadLine();
+
 
 
         }

@@ -34,12 +34,12 @@ public class Scripture
     {
 
         string[] words = _newText.Split(" ");
-        if (_wordsToHide != words.Length)
+        if (_wordsToHide < words.Length)
         {
             for (int i = 0; i < _wordsToHide; i++)
             {
                 Random rnd = new Random();
-                int randomNumber = rnd.Next(0, words.Length - 1);
+                int randomNumber = rnd.Next(0, words.Length);
                 string hiddenWord = words[randomNumber];
                 Word word1 = new Word();
                 word1.SetWord(hiddenWord);
@@ -55,19 +55,15 @@ public class Scripture
         }
         else
         {
-            for (int i = 0; i == _wordsToHide; i++)
+            int hidden = 0;
+            while (hidden < words.Length)
             {
-                string hiddenWord = words[i];
+                string hiddenWord = words[hidden];
                 Word word2 = new Word();
                 word2.SetWord(hiddenWord);
-                if (word2.CheckHiddenWord() == false)
-                {
-                    words[i] = word2.Hide(); ;
-                }
-                else
-                {
-                    i = i - 1;
-                }
+                words[hidden] = word2.Hide();
+
+                hidden++;
             }
         }
         string newUnitedText = GetDisplayText(words);
@@ -76,10 +72,10 @@ public class Scripture
     public string GetDisplayText(string[] words)
     {
         string newUnitedText = "";
+        int finalWord = 0;
         foreach (var word in words)
         {
-            int finalWord = 0;
-            if (words.Length == finalWord)
+            if (finalWord == words.Length - 1)
             {
                 newUnitedText = newUnitedText + word;
             }
@@ -88,7 +84,7 @@ public class Scripture
                 newUnitedText = newUnitedText + word + " ";
             }
             finalWord++;
-                
+
         }
         return newUnitedText;
     }
