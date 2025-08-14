@@ -152,7 +152,7 @@ public class GoalManager
                 string[] goalitems = selectedGoalFromList.Split(",");
                 if (goalitems[0] == "SimpleGoal:")
                 {
-                    if (goalitems[4] == "True")
+                    if (goalitems[4] == "False")
                     {
                         listedGoals[selectedGoal - 1] = goalitems[0] + "," + goalitems[1] + "," + goalitems[2] + "," + goalitems[3] + "," + "True";
                         int pointsToAdd = Convert.ToInt32(goalitems[3]);
