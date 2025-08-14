@@ -41,6 +41,13 @@ public class ReflectingActivity : Activity
         _questions.Add("What could you learn from this experience that applies to other situations?");
         _questions.Add("What did you learn about yourself through this experience?");
         _questions.Add("How can you keep this experience in mind in the future?");
+        _questions.Add("How did you change emotionally or mentally as a result of this?");
+        _questions.Add("Would you do anything differently if you could relive the experience? Why or why not?");
+        _questions.Add("What advice would you give to someone facing a similar situation?");
+        _questions.Add("What does this experience reveal about your values?");
+        _questions.Add("How did others respond to your actions?");
+        _questions.Add("What strengths did you demonstrate during this experience?");
+        _questions.Add("Have you ever faced something similar before? How was this time different?");
 
     }
     public string GetRadomQuestion()
