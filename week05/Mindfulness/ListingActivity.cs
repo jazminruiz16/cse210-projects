@@ -13,10 +13,11 @@ public class ListingActivity : Activity
     }
     private void StartList()
     {
-        _prompts.Add("Think of a time when you stood up for someone else.");
-        _prompts.Add("Think of a time when you did something really difficult.");
-        _prompts.Add("Think of a time when you helped someone in need.");
-        _prompts.Add("Think of a time when you did something truly selfless.");
+        _prompts.Add("Who are people that you appreciate?");
+        _prompts.Add("What are personal strengths of yours?");
+        _prompts.Add("Who are people that you have helped this week?");
+        _prompts.Add("When have you felt the Holy Ghost this month?");
+        _prompts.Add("Who are some of your personal heroes?");
 
     }
     private string GetRadomPrompt()

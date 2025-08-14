@@ -41,7 +41,7 @@ class Program
             }
             else if (question == "3")
             {
-                ListingActivity listing = new ListingActivity("Listing activity", "", 30);
+                ListingActivity listing = new ListingActivity("Listing activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 30);
                 listing.Run();
                 listing.DisplayingEndingMessage();
                 listing.ShowSpinner(8);
