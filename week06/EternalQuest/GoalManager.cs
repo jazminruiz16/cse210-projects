@@ -141,8 +141,9 @@ public class GoalManager
                 foreach (string goal in listedGoals)
                 {
                     string[] goalitemsNames = goal.Split(",");
-                    
+
                     Console.WriteLine(n + ". " + goalitemsNames[1]);
+                    n++;
                 }
                 Console.Write("Select a goal from menu: ");
                 string selectedGoalString = Console.ReadLine();
@@ -151,9 +152,19 @@ public class GoalManager
                 string[] goalitems = selectedGoalFromList.Split(",");
                 if (goalitems[0] == "SimpleGoal:")
                 {
-                    listedGoals[selectedGoal - 1] = goalitems[0]+"," + goalitems[1] + "," + goalitems[2] + "," + goalitems[3] + "," + "True";
-                    int pointsToAdd = Convert.ToInt32(goalitems[3]);
-                    _score = _score + pointsToAdd;
+                    if (goalitems[4] == "True")
+                    {
+                        listedGoals[selectedGoal - 1] = goalitems[0] + "," + goalitems[1] + "," + goalitems[2] + "," + goalitems[3] + "," + "True";
+                        int pointsToAdd = Convert.ToInt32(goalitems[3]);
+                        _score = _score + pointsToAdd;
+                        
+                    }                    
+                    else
+                    {
+                        Console.WriteLine("You have already completed this goal");
+
+                    }
+                    
                 }
                 else if (goalitems[0] == "EternalGoal:")
                 {

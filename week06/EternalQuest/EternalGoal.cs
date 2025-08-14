@@ -24,7 +24,7 @@ public class EternalGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        _description = "SimpleGoal:," + _shortName + "," + _description + "," + _points;
+        _description = "EternalGoal:," + _shortName + "," + _description + "," + _points;
         return _description;
     }
 }

@@ -1,5 +1,5 @@
-20
+70
 ChecklistGoal:,Checklist Goal 1,Check my health,20,100,3,1
-SimpleGoal:, simple goal 3,Spend time with my dog,50,False
+SimpleGoal:, simple goal 3,Spend time with my dog,50,True
 SimpleGoal:, simple goal 4,smile,70,False
-SimpleGoal:,Eternal Goal 1,Read Scriptures,50
+EternalGoal:,Eternal Goal 1,Read Scriptures,50
