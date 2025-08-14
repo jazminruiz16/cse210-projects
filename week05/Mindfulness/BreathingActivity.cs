@@ -86,11 +86,4 @@ public class BreathingActivity : Activity
             Console.WriteLine("");
         }
     }
-    /*public static async Task ShowMessageDelayed(string message, int seconds)
-    {
-        await Task.Delay(seconds * 1000);
-        Console.WriteLine(message);
-
-
-    }*/
 }

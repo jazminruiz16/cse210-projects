@@ -1,3 +1,4 @@
+/*Demonstrating creativity: For the reflection activity, I added more code so I wouldn't have duplicate questions until I'd reviewed them all*/
 using System;
 
 class Program
@@ -25,12 +26,6 @@ class Program
             if (question == "1")
             {
                 BreathingActivity breathing = new BreathingActivity("Breathing activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 30);
-
-                /*breathing.DisplayingStartingMessage();
-                Console.Clear();
-                Console.WriteLine("Get ready...");
-
-                breathing.ShowSpinner(10);*/
                 breathing.Run();
                 breathing.DisplayingEndingMessage();
                 breathing.ShowSpinner(8);
@@ -44,19 +39,13 @@ class Program
                 reflecting.DisplayingEndingMessage();
                 reflecting.ShowSpinner(8);
             }
-            /* else if (question == "3")
-             {
-                 Console.Write("Enter the name of your file: ");
-                 string fileName = Console.ReadLine();
-                 LoadToFile(fileName);
-             }*/
-            /*else if (question == "4 SAVE")
+            else if (question == "3")
             {
-                Console.Write("Enter the name of your file: ");
-                string fileName = Console.ReadLine();
-                SaveToFile(fileName);
-
-            }*/
+                ListingActivity listing = new ListingActivity("Listing activity", "", 30);
+                listing.Run();
+                listing.DisplayingEndingMessage();
+                listing.ShowSpinner(8);
+            }
             else if (question == "4")
             {
                 Console.WriteLine("Cogratulations! You accomplished today's goal of writing your journal.");

@@ -19,7 +19,9 @@ public class Activity
     }
     public void DisplayingEndingMessage()
     {
-        Console.WriteLine("Well done" + "\n You have completed " + _duration + " seconds of the " + _name);
+        Console.WriteLine("Well done");
+        ShowSpinner(8);
+        Console.WriteLine( "You have completed " + _duration + " seconds of the " + _name);
     }
     public void ShowSpinner(int seconds)
     {
@@ -57,12 +59,4 @@ public class Activity
         }
     }  
 
-    /*public void DisplayingEndingMessage() { "How long, in seconds, would you like for your sesion? "}*/
-    public static async Task ShowMessageDelayed(string message, int seconds)
-    {
-        await Task.Delay(seconds * 1000);
-        Console.WriteLine(message);
-
-
-    }
 }
