@@ -8,19 +8,16 @@ class Program
         Console.WriteLine("Hello World! This is the Mindfulness Project.");
         Console.WriteLine("");
         string question = "0";
-        while (question != "5")
+        while (question != "4")
         {
             Console.WriteLine("1. Start breathing activity");
             Console.WriteLine("2. Start reflecting activity");
             Console.WriteLine("3. Start listing activity");
-            Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("4. Quit");
             
             Console.Write("What would you like to do? ");
             question = Console.ReadLine();
-            /*Console.Write("How long, in seconds, would you like for this sesion? ");
-            string timeString = Console.ReadLine();
-            int time = Convert.ToInt32(timeString);*/
+
             Console.Clear();
 
             if (question == "1")
@@ -48,7 +45,7 @@ class Program
             }
             else if (question == "4")
             {
-                Console.WriteLine("Cogratulations! You accomplished today's goal of writing your journal.");
+                Console.WriteLine("Have a nice day!");
 
             }
             else
@@ -58,13 +55,5 @@ class Program
         }
 
     }
-    /*Breathing breathing = new Breathing("name", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 30);
-        breathing.DisplayingStartingMessage();
-        breathing.ShowSpinner(10);
-        --string summary = mathAssignment.GetSummary();
-        string homeworkList = mathAssignment.GetHomeworkList();
-        Console.WriteLine(summary);
-        Console.WriteLine(homeworkList);--
 
-    }*/
 }

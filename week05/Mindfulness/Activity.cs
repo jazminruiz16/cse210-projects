@@ -21,7 +21,7 @@ public class Activity
     {
         Console.WriteLine("Well done");
         ShowSpinner(8);
-        Console.WriteLine( "You have completed " + _duration + " seconds of the " + _name);
+        Console.WriteLine( "You have completed " + _duration + " seconds of the " + _name+".");
     }
     public void ShowSpinner(int seconds)
     {
